@@ -74,5 +74,5 @@ Deliberately anti-classical: heavy sans-serif lowercase title with negative trac
 - Composer referenced by the generation modes: Karlheinz Stockhausen, *Klavierstück XI* (1956).
 
 ## Live Demo
-([Play with this experiment here](https://tomasproanop.github.io/sollozo-por-pedro-jara/))
+[Play with this experiment here](https://tomasproanop.github.io/sollozo-por-pedro-jara/)
 
