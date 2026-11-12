@@ -1,0 +1,317 @@
+:root {
+  --paper: #f4f2ec;
+  --ink: #171512;
+  --ink-soft: #45413a;
+  --faded: #8f897c;
+  --rule: #dcd6c8;
+  --accent: #6b6480;
+  --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, "Courier New", monospace;
+}
+:root[data-theme="dark"] {
+  --paper: #131118;
+  --ink: #e9e5db;
+  --ink-soft: #c8c3b8;
+  --faded: #7e7970;
+  --rule: #33303c;
+  --accent: #a89dd0;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  line-height: 1.7;
+  min-height: 100vh;
+  transition: background .3s ease, color .3s ease;
+}
+.sheet { max-width: 52rem; margin: 0 auto; padding: 2.5rem 2rem 5rem; }
+body.en-pliego .sheet { max-width: 62rem; }
+
+/* ---- header ---- */
+header {
+  border-top: 5px solid var(--ink);
+  padding-top: 1.2rem;
+  margin-bottom: 2rem;
+}
+.titulo {
+  font-size: clamp(2.4rem, 7.5vw, 4.5rem);
+  letter-spacing: -.04em;
+  line-height: .85;
+  text-transform: lowercase;
+}
+.meta {
+  font-family: var(--mono);
+  font-size: .62rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--faded);
+  margin-top: 3rem;
+}
+
+/* ---- nav ---- */
+.vistas {
+  display: flex; gap: .5rem; flex-wrap: wrap;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 1.2rem;
+  margin-bottom: 2.5rem;
+}
+.vistas button {
+  font-family: var(--mono);
+  font-size: .6rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--faded);
+  border: 1px solid var(--rule);
+  padding: .55rem 1rem;
+  cursor: pointer;
+  transition: color .2s, border-color .2s, background .2s;
+}
+.vistas button:hover { color: var(--ink); border-color: var(--ink); }
+.vistas button.activo { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+/* ---- partitura ---- */
+.partitura {
+  border-left: 3px solid var(--ink);
+  padding: .2rem 0 .2rem 1.4rem;
+  margin-bottom: 2.5rem;
+  font-size: .85rem;
+}
+.partitura .label {
+  font-family: var(--mono);
+  font-size: .6rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--faded);
+  margin-bottom: 1.1rem;
+}
+.field { display: flex; align-items: baseline; gap: 1rem; flex-wrap: wrap; margin-bottom: .9rem; }
+.etiqueta {
+  font-family: var(--mono);
+  font-size: .62rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  min-width: 5.4rem;
+}
+.modes { display: flex; gap: 1.2rem; flex-wrap: wrap; }
+.modes label { display: flex; align-items: center; gap: .4rem; cursor: pointer; font-size: .8rem; }
+.modes input, .check input { accent-color: var(--accent); }
+.check { display: flex; align-items: center; gap: .5rem; cursor: pointer; font-size: .8rem; }
+.hint { color: var(--faded); font-size: .7rem; font-family: var(--mono); }
+input[type="text"] {
+  font-family: var(--mono);
+  font-size: .8rem;
+  border: none;
+  border-bottom: 1px solid var(--rule);
+  background: transparent;
+  padding: .2rem;
+  width: 7.5rem;
+  color: var(--ink);
+}
+input[type="text"]:focus { outline: none; border-bottom-color: var(--accent); }
+input[type="range"] { accent-color: var(--accent); flex: 1; min-width: 8rem; }
+button#generar {
+  font-family: var(--mono);
+  font-size: .7rem;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  background: var(--ink);
+  color: var(--paper);
+  border: 1px solid var(--ink);
+  padding: .85rem 0;
+  width: 100%;
+  cursor: pointer;
+  transition: background .2s, color .2s;
+}
+button#generar:hover { background: transparent; color: var(--ink); }
+.seed-readout {
+  font-family: var(--mono);
+  font-size: .62rem;
+  color: var(--faded);
+  margin-top: .7rem;
+  min-height: 1em;
+}
+
+/* ---- poema ---- */
+#poema { margin-top: 2.5rem; }
+.parte { display: flex; align-items: baseline; gap: 1rem; margin: 2.8rem 0 1.2rem; }
+.parte .pn { font-size: 1.9rem; font-weight: 800; color: var(--rule); line-height: 1; }
+.parte .pl { flex: 1; height: 1px; background: var(--rule); }
+.verso {
+  white-space: pre-wrap;
+  padding-left: 2.8rem;
+  text-indent: -2.8rem;
+  font-size: .98rem;
+  max-width: 40rem;
+}
+.verso .ruta {
+  font-family: var(--mono);
+  font-size: .55rem;
+  color: var(--accent);
+  vertical-align: super;
+  margin-left: .4rem;
+  letter-spacing: .05em;
+}
+.versiculo {
+  font-family: var(--mono);
+  font-size: .62rem;
+  color: var(--faded);
+  margin-top: 1rem;
+  padding-left: 2.8rem;
+}
+.blank { height: .5rem; }
+
+/* ---- pliego ---- */
+#pliego { display: none; }
+#pliego.visible { display: block; }
+.pliego-nota {
+  font-family: var(--mono);
+  font-size: .62rem;
+  color: var(--faded);
+  margin-bottom: 1.5rem;
+  max-width: 46rem;
+}
+.pliego-tools { margin-bottom: 1.5rem; }
+button#imprimir {
+  font-family: var(--mono);
+  font-size: .6rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--ink);
+  padding: .55rem 1.4rem;
+  cursor: pointer;
+  transition: background .2s, color .2s;
+}
+button#imprimir:hover { background: var(--ink); color: var(--paper); }
+.pliego-wrap { overflow-x: auto; }
+.pliego-grid {
+  display: grid;
+  grid-template-columns: 1.6rem 1fr 1fr 1fr;
+  gap: .5rem 1.2rem;
+  font-size: .68rem;
+  line-height: 1.5;
+}
+.pliego-num { font-size: 1.2rem; font-weight: 800; color: var(--rule); }
+.sub-titulo {
+  font-family: var(--mono);
+  font-size: .55rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: .4rem;
+  padding-bottom: .15rem;
+}
+.linea { display: flex; gap: .45rem; }
+.ln {
+  font-family: var(--mono);
+  font-size: .5rem;
+  color: var(--faded);
+  min-width: 1rem;
+  text-align: right;
+  padding-top: .2rem;
+  flex-shrink: 0;
+}
+.texto { word-break: break-word; }
+
+/* ---- bio / footer ---- */
+.bio {
+  margin-top: 4rem;
+  border-top: 1px solid var(--rule);
+  padding-top: 1.4rem;
+  font-size: .82rem;
+  max-width: 42rem;
+  color: var(--ink-soft);
+}
+.bio h2 {
+  font-family: var(--mono);
+  font-size: .6rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--faded);
+  font-weight: normal;
+  margin-bottom: .9rem;
+}
+.bio p { margin-bottom: .7rem; }
+.fuente { font-family: var(--mono); font-size: .62rem; color: var(--faded); }
+footer {
+  margin-top: 3rem;
+  font-family: var(--mono);
+  font-size: .6rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--faded);
+}
+
+/* ---- print ---- */
+@page { size: A4 landscape; margin: 12mm; }
+@media print {
+  :root, :root[data-theme="dark"] {
+    --paper: #fff; --ink: #171512; --ink-soft: #45413a;
+    --faded: #6e695f; --rule: #c9c3b6; --accent: #6b6480;
+  }
+  body { background: #fff; }
+  .sheet { max-width: none; padding: 0; }
+  .vistas, .partitura, #vistaGenerativa, .bio, footer,
+  .pliego-tools, .pliego-nota { display: none !important; }
+  #pliego { display: block !important; }
+  header { border-top-width: 4px; margin-bottom: 1rem; }
+  .titulo { font-size: 1.6rem; }
+  .meta { font-size: .6rem; }
+  .pliego-wrap { overflow: visible; }
+  .pliego-grid { font-size: 7.4pt; gap: .4rem 6mm; }
+}
+
+/* ---- print source ---- */
+.fuente-impresa { display: none; }
+
+@media print {
+  .fuente-impresa {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-family: var(--mono);
+    font-size: 6.5pt;
+    letter-spacing: .06em;
+    color: #555;
+    text-align: center;
+    border-top: 1px solid #bbb;
+    padding-top: 2mm;
+  }
+}
+
+/* ---- bibliography ---- */
+#biblio { display: none; }
+#biblio.visible { display: block; }
+
+.biblio-lista {
+  list-style: none;
+  max-width: 44rem;
+  font-size: .78rem;
+  line-height: 1.6;
+}
+.biblio-lista li {
+  padding: .55rem 0 .55rem 1.2rem;
+  text-indent: -1.2rem;
+  border-bottom: 1px dotted var(--rule);
+}
+.biblio-lista a { color: var(--accent); text-decoration: underline; }
+
+@media print {
+  #biblio { display: none !important; } 
+}
+
+/* ---- issues ---- */
+.issue-link {
+  color: var(--accent);
+  text-decoration: underline;
+  font-size: inherit;
+}
+.issue-link:hover { color: var(--ink); }

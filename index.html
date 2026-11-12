@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>sollozo por pedro jara — efraín jara idrovo</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="sheet">
+
+  <header>
+    <h1 class="titulo">sollozo por pedro jara</h1>
+    <p class="meta" data-i18n="sub">efraín jara idrovo — sollozo por pedro jara (estructuras para una elegía) · cuenca, 1978</p>
+  </header>
+
+  <nav class="vistas">
+    <button id="vistaLectura" class="activo" data-i18n="vistaGenerativa">lectura generativa</button>
+    <button id="vistaPliego" data-i18n="pliego">pliego completo</button>
+      <button id="vistaBiblio" data-i18n="biblio">bibliografía</button>
+    <button id="langBtn">english</button>
+    <button id="temaBtn">sombra</button>
+  </nav>
+
+  <div id="vistaGenerativa">
+
+    <section class="partitura">
+      <div class="label" data-i18n="partitura">partitura de lectura</div>
+
+      <div class="field" role="radiogroup" aria-label="modo de lectura">
+        <span class="etiqueta"></span>
+        <div class="modes">
+          <label><input type="radio" name="modo" value="libre" checked><span data-i18n="modoLibre">lectura combinatoria</span></label>
+          <label><input type="radio" name="modo" value="vecinos"><span data-i18n="modoVecinos">salto entre campos vecinos</span></label>
+          <label><input type="radio" name="modo" value="corrida"><span data-i18n="modoCorrida">corrida (texto íntegro)</span></label>
+        </div>
+      </div>
+      <div class="field"><span class="etiqueta"></span><span class="hint" id="modoHint"></span></div>
+
+      <div class="field">
+        <span class="etiqueta" data-i18n="semilla">semilla</span>
+        <input type="text" id="semilla" inputmode="numeric" data-i18n-ph="semillaPh" placeholder="(vacío = azar)">
+        <span class="hint" data-i18n="semillaHint">misma semilla → misma lectura</span>
+      </div>
+
+      <div class="field">
+        <span class="etiqueta" data-i18n="densidad">densidad</span>
+        <div class="modes">
+          <label><input type="radio" name="densidad" value="1"> 1</label>
+          <label><input type="radio" name="densidad" value="2"> 2</label>
+          <label><input type="radio" name="densidad" value="3" checked> 3</label>
+        </div>
+        <span class="hint" data-i18n="densidadHint">variantes en circulación por parte</span>
+      </div>
+
+      <div class="field">
+        <span class="etiqueta" data-i18n="tempo">tempo</span>
+        <input type="range" id="tempo" min="0" max="2200" value="260">
+        <span class="hint" id="tempoHint"></span>
+      </div>
+
+      <div class="field">
+        <span class="etiqueta" data-i18n="ruta">ruta</span>
+        <label class="check"><input type="checkbox" id="ruta"><span data-i18n="rutaCheck">anotar la variante de origen de cada verso</span></label>
+      </div>
+
+      <div class="actions"><button id="generar" data-i18n="generar">generar lectura</button></div>
+      <div class="seed-readout" id="semillaUsada"></div>
+    </section>
+
+    <main id="poema" aria-live="polite"></main>
+
+  </div>
+
+  <div id="pliego">
+    <p class="pliego-nota" data-i18n="pliegoNota"></p>
+    <div class="pliego-tools"><button id="imprimir" data-i18n="imprimir">imprimir pliego</button></div>
+    <div class="pliego-wrap"><div class="pliego-grid" id="pliegoGrid"></div></div>
+  </div>
+
+  <div id="biblio">
+    <p class="pliego-nota" id="biblioIntro"></p>
+    <ul class="biblio-lista" id="biblioLista"></ul>
+  </div>
+
+  <section class="bio">
+    <h2 data-i18n="bioTitulo">sobre el poeta</h2>
+    <p data-i18n="bio1"></p>
+    <p data-i18n="bio2"></p>
+    <p class="fuente" data-i18n="bio3"></p>
+  </section>
+
+<footer>
+  <span data-i18n="footer"></span>
+  <br>
+  <br>
+  <a class="issue-link" href="https://github.com/tomasproanop/sollozo-por-pedro-jara/issues/new" target="_blank" rel="noopener" data-i18n="issueLink">reportar un problema</a>
+</footer>
+
+</div>
+<div class="fuente-impresa" id="fuenteImpresa"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
