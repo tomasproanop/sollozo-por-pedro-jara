@@ -70,5 +70,9 @@ Deliberately anti-classical: heavy sans-serif lowercase title with negative trac
 ## Credits
 
 - Poem: **Efraín Jara Idrovo**, *Sollozo por Pedro Jara (Estructuras para una elegía)*, Cuenca: Casa de la Cultura, 1978.
-- English translation: **Dr. Cecilia Mafla-Bustamante**, *ISLE* 5, no. 1, Oxford University Press, 1998.
+- English translation: **Dr. Cecilia Mafla-Bustamante**, *ISLE* vol. 5, Issue 1, Pages 89-98, Oxford University Press, 1998.
 - Composer referenced by the generation modes: Karlheinz Stockhausen, *Klavierstück XI* (1956).
+
+## Live Demo
+([Play with this experiment here](https://tomasproanop.github.io/sollozo-por-pedro-jara/))
+
