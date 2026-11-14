@@ -77,7 +77,7 @@ Heavy sans-serif lowercase title with negative tracking (echoing the poem's fuse
 
 ## Bibliography
 
-Check the bibliography if you want to explore literary analysis about this poem (mostly in Spanish). 
+Check out the bibliography if you want to explore literary analysis about this poem (mostly in Spanish). 
 
 ## Live Demo
 [Play with this experiment here](https://tomasproanop.github.io/sollozo-por-pedro-jara/)
