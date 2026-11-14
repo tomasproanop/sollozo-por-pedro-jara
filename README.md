@@ -13,19 +13,19 @@ The site takes that instruction and automates it, in the spirit of Karlheinz Sto
 ## Features
 
 ### Generative reading
-- **Combinatorial mode** — one line per position, chosen at random among the three variants of each part.
-- **Adjacent-fields mode** — modeled directly on *Klavierstück XI*: after drawing from variant *v*, the next draw comes from a neighboring variant (*v±1*), so the walk drifts through the fields instead of teleporting.
-- **Straight-through mode** — all fifteen subsections in sequence, no chance.
+- **Combinatorial mode**: one line per position, chosen at random among the three variants of each part.
+- **Adjacent-fields mode**: modeled directly on *Klavierstück XI*: after drawing from variant *v*, the next draw comes from a neighboring variant (*v±1*), so the walk drifts through the fields instead of teleporting.
+- **Straight-through mode**: all fifteen subsections in sequence, no chance.
 
 ### Parameters (the "reading score")
 | Parameter | Effect |
 |---|---|
-| **seed** | A number feeding a deterministic PRNG ([mulberry32](https://github.com/bryc/code/blob/master/js/prng/mulberry32.md)). The same seed always produces the same reading — write it down to repeat or share a version. Empty = truly random. |
+| **seed** | A number feeding a deterministic PRNG ([mulberry32](https://github.com/bryc/code/blob/master/js/prng/mulberry32.md)). The same seed always produces the same reading. You can write it down to repeat or share a version. Empty = truly random. |
 | **density** | How many variants (1–3) are in rotation per part. Fewer = sparser, thinner texture. |
 | **tempo** | Milliseconds per line. Slow settings turn the reveal into a meditation; 0 = instant reveal of the whole reading. |
 | **path** | Annotate each line with the variant it came from (e.g. `II·3`) to trace the walk. |
 
-The seed produces the **same sequence in both languages** — switching language replays the equivalent reading line by line, in keeping with the poem's spirit.
+The seed produces the **same sequence in both languages**, switching language replays the equivalent reading line by line.
 
 ### Broadside view (print score)
 A second tab lays out all fifteen subsections in a three-column grid with their line numbers preserved, recreating the single-sheet intention of the 1978 edition: you can follow the progression with your eyes and jump between variants yourself. A print button outputs a clean A4-landscape sheet (controls, bio and UI are excluded from printing via `@media print`).
@@ -52,7 +52,9 @@ Open `index.html` in any modern browser, or serve the folder statically:
 python3 -m http.server
 ```
 
-To modify the poem data, edit the `PARTES` (Spanish) and `PARTES_EN` (English) arrays at the top of `script.js`. Structure:
+To modify the poem data, edit the `PARTES` (Spanish) and `PARTES_EN` (English) arrays at the top of `script.js`. 
+
+Structure:
 
 ```js
 const PARTES = [
@@ -61,11 +63,11 @@ const PARTES = [
 ];
 ```
 
-All variants within a part must have the same number of lines — the generator walks them by index. Interface strings live in the `I18N` object.
+All variants within a part must have the same number of lines, the generator walks them by index. Interface strings live in the `I18N` object.
 
 ## Design
 
-Deliberately anti-classical: heavy sans-serif lowercase title with negative tracking (echoing the poem's fused compounds like *pedrohuesosdepedernal*), monospaced metadata, oversized grey part numerals, asymmetric left-rule control panel. No imagery, the typography is the image.
+Heavy sans-serif lowercase title with negative tracking (echoing the poem's fused compounds like *pedrohuesosdepedernal*), monospaced metadata, oversized grey part numerals, asymmetric left-rule control panel. No imagery, the typography is the image.
 
 ## Credits
 
@@ -73,6 +75,9 @@ Deliberately anti-classical: heavy sans-serif lowercase title with negative trac
 - English translation: **Dr. Cecilia Mafla-Bustamante**, *ISLE* vol. 5, Issue 1, Pages 89-98, Oxford University Press, 1998.
 - Composer referenced by the generation modes: Karlheinz Stockhausen, *Klavierstück XI* (1956).
 
+## Bibliography
+
+Check the bibliography if you want to explore literary analysis about this poem (mostly in Spanish). 
+
 ## Live Demo
 [Play with this experiment here](https://tomasproanop.github.io/sollozo-por-pedro-jara/)
-
