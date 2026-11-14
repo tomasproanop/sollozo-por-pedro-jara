@@ -1,4 +1,4 @@
-# sollozo por pedro jara
+# sollozo por pedro jara - estructuras para una elegía (1978)
 
 A minimal, experimental web page that generates readings of **sollozo por pedro jara (estructuras para una elegía)**, a poem by Ecuadorian poet **Efraín Jara Idrovo** (1978).
 
