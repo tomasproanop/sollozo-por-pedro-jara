@@ -6,7 +6,7 @@ A minimal, experimental web page that generates readings of **sollozo por pedro 
 
 The poem is divided into five parts, each with three distinct but equivalent versions of the same movement, numbered as a progressive scheme. It was conceived to be read "in countless combinations", provided the numeric progression of the lines is respected, the reader jumps freely, forward and backward, between the variants of each part. The result is a text that is *always different and always the same*. It can also be read straight through.
 
-The original edition (Cuenca, Casa de la Cultura, 1978) was printed on a single wide broadsheet so the whole poem could be seen at a glance, which is what made these readings possible.
+The original edition (Casa de la Cultura, Núcleo del Azuay, 1978) was printed on a single wide broadsheet so the whole poem could be seen at a glance, which is what made these readings possible.
 
 The site takes that instruction and automates it, in the spirit of Karlheinz Stockhausen's *Klavierstück XI* (1956): a score of groups the performer traverses in unpredictable order, setting tempo and dynamics anew at each arrival.
 
@@ -67,12 +67,12 @@ All variants within a part must have the same number of lines, the generator wal
 
 ## Design
 
-Heavy sans-serif lowercase title with negative tracking (echoing the poem's fused compounds like *pedrohuesosdepedernal*), monospaced metadata, oversized grey part numerals, asymmetric left-rule control panel. No imagery, the typography is the image.
+Heavy sans-serif lowercase title with negative tracking, monospaced metadata, oversized grey part numerals, asymmetric left-rule control panel. No imagery, the typography is the image.
 
 ## Credits
 
-- Poem: **Efraín Jara Idrovo**, *Sollozo por Pedro Jara (Estructuras para una elegía)*, Cuenca: Casa de la Cultura, 1978.
-- English translation: **Dr. Cecilia Mafla-Bustamante**, *ISLE* vol. 5, Issue 1, Pages 89-98, Oxford University Press, 1998.
+- Poem: **Efraín Jara Idrovo**, *sollozo por pedro jara (estructuras para una elegía)*, Cuenca: Casa de la Cultura, Núcleo del Azuay, 1978.
+- English translation: **Dr. Cecilia Mafla-Bustamante**, *ISLE* Vol. 5, Issue 1, Pages 89-98, Oxford University Press, 1998.
 - Composer referenced by the generation modes: Karlheinz Stockhausen, *Klavierstück XI* (1956).
 
 ## Bibliography
